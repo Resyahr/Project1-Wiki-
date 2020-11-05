@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block content %}
+    
+
+    <div class="fluid-container">
+        <div class="d-flex col justify-content-center">
+            <h1>All Pages</h1>
+            <ul>
+                {% for entry in entries %}
+
+                    <li>{{ entry }}</li></a>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

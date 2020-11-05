@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <script src="https://kit.fontawesome.com/fb89bca5b4.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+    </body>
+        
+        <div class="svgImg">
+            <img src="{% static 'encyclopedia/svg.svg' %}">
+        </div>
+        <header class="navbar flex-column flex-md-row navControl">
+            <!-- Wiki Logo-->
+            <div class="logo">
+                <a href=" {% url 'index' %} ">
+                    <img src="{% static 'encyclopedia/logo.svg' %}">
+                </a>
+            </div>
+            <!-- Search bar for header -->
+            <div class="col-lg-5 col-md-4s searchBar">
+                <form action="">
+                    <input class="rounded-pill no-outline" type="text" name="q" placeholder="Search in Wiki"><i class="fas fa-search ico"></i>
+                    <button class="btn">Search</button>
+                </form>
+
+            </div>
+
+            <!-- Nav links -->
+            <div class="navLinks">
+                <ul class="nav justify-content-start p-4">
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Home Page</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Create Wiki</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Show Random Wiki</a>
+                     </li>
+                </ul>
+            </div>
+        </header>
+        
+            <div class="container col-lg-7 text" style="color: white;">
+                {% block body%}
+                {% endblock%}
+            </div>
+    </body>
+</html>
